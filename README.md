@@ -519,23 +519,119 @@ Geo-Explorer/
 
 ---
 
-## 🧪 Testes
+## 🧪 Como Executar os Testes
+
+O GEO Explorer possui **83 testes automatizados** divididos em dois arquivos, cobrindo desde funções isoladas até fluxos completos fim-a-fim.
+
+---
+
+### 📁 Onde ficam os testes?
+
+```
+geo_explorer/CRC/
+├── test_geo.py              → 43 testes unitários
+├── test_integration.py      → 40 testes de integração
+├── resultado_testes_geo.txt → log gerado ao rodar test_geo.py
+└── resultado_integracao.txt → log gerado ao rodar test_integration.py
+```
+
+---
+
+### 1️⃣ Testes Unitários — `test_geo.py`
+
+Validam cada função isoladamente: carregamento de dados, busca, geração de trilhas, desafios e certificados.
 
 ```bash
-# Testes unitários (43 testes)
 cd geo_explorer/CRC
 python test_geo.py
+```
 
-# Testes de integração (40 testes)
+**Saída esperada:**
+```
+✅ Testes: 43/43 | Cobertura: 100.0% | Log: resultado_testes_geo.txt
+```
+
+**Suítes incluídas:**
+
+| Suíte | Testes | O que valida |
+|-------|--------|-------------|
+| `TestCarregarPaises` | 3 | JSON carrega, tem 15 países, campos obrigatórios |
+| `TestCarregarTecnologias` | 5 | JSON carrega, 20 tecnologias, módulos e tipos |
+| `TestHandleGeo` | 6 | Busca de país, case-insensitive, 400/404 |
+| `TestHandleTrilhaGeo` | 8 | Trilha, cronograma, fases, not found |
+| `TestHandleDesafioGeo` | 8 | Nível, XP, enunciado, dicas, critérios |
+| `TestHandleCertificadoGeo` | 8 | Emissão, ID, arquivo, badges, 400 |
+| `TestHandleListas` | 5 | Lista países e tecnologias, campos resumo |
+
+---
+
+### 2️⃣ Testes de Integração — `test_integration.py`
+
+Validam o sistema de ponta a ponta: endpoints HTTP, fluxos completos e casos extremos.
+
+```bash
+cd geo_explorer/CRC
 python test_integration.py
 ```
 
-**Resultado atual:**
+**Saída esperada:**
 ```
-Unitários  : 43/43  ✅  100%
-Integração : 40/40  ✅  100%
-TOTAL      : 83/83  ✅  100%
+=================================================================
+  GEO Explorer — Resultado dos Testes de Integração
+=================================================================
+  ✅ Smoke Tests MCP                        15 testes
+  ✅ Fluxo Completo — QGIS                  10 testes
+  ✅ Fluxo Completo — Python                5 testes
+  ✅ Resiliência / Edge Cases               10 testes
+=================================================================
+  Total    : 40
+  ✅ Passou : 40
+  Cobertura: 100.0%  |  Meta: 70%
+  ✅ META ATINGIDA!
+=================================================================
 ```
+
+**Suítes incluídas:**
+
+| Suíte | Testes | O que valida |
+|-------|--------|-------------|
+| `TestSmokeEndpoints` | 15 | Health check, auth, 401, 404, todos os endpoints |
+| `TestFluxoCompletoQGIS` | 10 | Trilha → desafio → certificado → arquivo gerado |
+| `TestFluxoCompletoPython` | 5 | Fases, badges, enunciado, fluxo via API HTTP |
+| `TestResiliencia` | 10 | Busca parcial, nível inválido, key inválida, edge cases |
+
+---
+
+### 3️⃣ Rodar todos de uma vez
+
+```bash
+cd geo_explorer/CRC
+python test_geo.py && python test_integration.py
+```
+
+---
+
+### 4️⃣ Ver os logs gerados
+
+Os resultados são salvos automaticamente em arquivos `.txt`:
+
+```bash
+# Abrir log de testes unitários
+type geo_explorer\CRC\resultado_testes_geo.txt
+
+# Abrir log de integração
+type geo_explorer\CRC\resultado_integracao.txt
+```
+
+---
+
+### 📊 Resultado Atual
+
+| Arquivo | Testes | Passou | Cobertura | Meta |
+|---------|--------|--------|-----------|------|
+| `test_geo.py` | 43 | 43 | ✅ 100% | ≥70% |
+| `test_integration.py` | 40 | 40 | ✅ 100% | ≥70% |
+| **Total** | **83** | **83** | **✅ 100%** | ≥70% |
 
 ---
 
