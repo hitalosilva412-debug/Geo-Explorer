@@ -43,7 +43,7 @@ test_lista_tecnologias_200 (__main__.TestHandleListas.test_lista_tecnologias_200
 test_lista_tecnologias_tem_20 (__main__.TestHandleListas.test_lista_tecnologias_tem_20) ... ok
 
 ----------------------------------------------------------------------
-Ran 43 tests in 0.040s
+Ran 43 tests in 0.037s
 
 OK
 

@@ -12,32 +12,32 @@
 
 ---
 
-## ✨ HITALO ✨
+## ✨ MARIA DEV ✨
 
 **concluiu com êxito a trilha:**
 
-## 🌐 TechInexistente999
+## 🌐 GeoMapping com Python
 
 | Campo | Detalhes |
 |-------|----------|
-| 📂 Categoria | Geotecnologia |
-| 📊 Nível | Intermediário |
-| 📦 Módulos | 0/0 ✅ |
-| ⭐ XP | 500 XP |
-| 🕐 Carga Horária | N/A |
-| 🏅 Badges | TechInexistente999 Explorer |
+| 📂 Categoria | Dados Geográficos |
+| 📊 Nível | Iniciante |
+| 📦 Módulos | 6/6 ✅ |
+| ⭐ XP | 3200 XP |
+| 🕐 Carga Horária | 24h |
+| 🏅 Badges | Map Starter • Python Geo • Data Plotter |
 | 📅 Conclusão | 19/08/2026 |
-| 🆔 ID | GEO-2026-84083742 |
+| 🆔 ID | GEO-2026-29686456 |
 
 ### 🏆 Badges
-🏅 **TechInexistente999 Explorer**  
+🏅 **Map Starter**  🏅 **Python Geo**  🏅 **Data Plotter**  
 
 ### 📺 Lives Assistidas
-
+  ✅ Live: Primeiro Mapa com Python\n  ✅ Live: GeoPandas na Prática\n  ✅ Live: Deploy de Mapa Web\n
 
 ---
 
-> 🔒 https://geoexplorer.app/certificate/GEO-2026-84083742
+> 🔒 https://geoexplorer.app/certificate/GEO-2026-29686456
 > 🌍 GEO Explorer — _Explore o Mundo pelos Dados_
 
 _Certificado Fictício — GEO Explorer v1.0.0_

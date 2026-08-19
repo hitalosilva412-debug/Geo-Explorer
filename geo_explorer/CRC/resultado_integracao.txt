@@ -1,0 +1,67 @@
+test_auth_token_gerado (__main__.TestSmokeEndpoints.test_auth_token_gerado) ... ok
+test_certificado_body_invalido_400 (__main__.TestSmokeEndpoints.test_certificado_body_invalido_400) ... ok
+test_certificado_via_post (__main__.TestSmokeEndpoints.test_certificado_via_post) ... ok
+test_desafio_python_avancado (__main__.TestSmokeEndpoints.test_desafio_python_avancado) ... ok
+test_docs (__main__.TestSmokeEndpoints.test_docs) ... ok
+test_geo_brasil (__main__.TestSmokeEndpoints.test_geo_brasil) ... ok
+test_geo_pais_invalido_404 (__main__.TestSmokeEndpoints.test_geo_pais_invalido_404) ... ok
+test_health_check (__main__.TestSmokeEndpoints.test_health_check) ... ok
+test_lista_paises_com_auth (__main__.TestSmokeEndpoints.test_lista_paises_com_auth) ... ok
+test_lista_tecnologias_com_auth (__main__.TestSmokeEndpoints.test_lista_tecnologias_com_auth) ... ok
+test_rota_invalida_retorna_404 (__main__.TestSmokeEndpoints.test_rota_invalida_retorna_404) ... ok
+test_sem_auth_retorna_401 (__main__.TestSmokeEndpoints.test_sem_auth_retorna_401)
+Verifica que _auth recusa key ausente no modo apikey. ... ok
+test_status (__main__.TestSmokeEndpoints.test_status) ... ok
+test_trilha_qgis (__main__.TestSmokeEndpoints.test_trilha_qgis) ... ok
+test_trilha_tech_invalida_404 (__main__.TestSmokeEndpoints.test_trilha_tech_invalida_404) ... ok
+test_01_tecnologia_existe (__main__.TestFluxoCompletoQGIS.test_01_tecnologia_existe) ... ok
+test_02_trilha_gerada (__main__.TestFluxoCompletoQGIS.test_02_trilha_gerada) ... ok
+test_03_cronograma_cobre_todos_modulos (__main__.TestFluxoCompletoQGIS.test_03_cronograma_cobre_todos_modulos) ... ok
+test_04_desafio_iniciante (__main__.TestFluxoCompletoQGIS.test_04_desafio_iniciante) ... ok
+test_05_desafio_intermediario (__main__.TestFluxoCompletoQGIS.test_05_desafio_intermediario) ... ok
+test_06_desafio_avancado (__main__.TestFluxoCompletoQGIS.test_06_desafio_avancado) ... ok
+test_07_certificado_emitido (__main__.TestFluxoCompletoQGIS.test_07_certificado_emitido) ... ok
+test_08_certificado_arquivo_existe (__main__.TestFluxoCompletoQGIS.test_08_certificado_arquivo_existe) ... ok
+test_09_certificado_conteudo_correto (__main__.TestFluxoCompletoQGIS.test_09_certificado_conteudo_correto) ... ok
+test_10_xp_consistente (__main__.TestFluxoCompletoQGIS.test_10_xp_consistente) ... ok
+test_01_tecnologia_encontrada (__main__.TestFluxoCompletoPython.test_01_tecnologia_encontrada) ... ok
+test_02_trilha_tem_fases (__main__.TestFluxoCompletoPython.test_02_trilha_tem_fases) ... ok
+test_03_desafio_enunciado_nao_vazio (__main__.TestFluxoCompletoPython.test_03_desafio_enunciado_nao_vazio) ... ok
+test_04_certificado_badges_corretas (__main__.TestFluxoCompletoPython.test_04_certificado_badges_corretas) ... ok
+test_05_fluxo_via_api (__main__.TestFluxoCompletoPython.test_05_fluxo_via_api) ... ok
+test_api_key_invalida_retorna_401 (__main__.TestResiliencia.test_api_key_invalida_retorna_401)
+Verifica diretamente que key inválida é rejeitada. ... ok
+test_busca_parcial_tecnologia (__main__.TestResiliencia.test_busca_parcial_tecnologia)
+Busca com parte do nome deve funcionar. ... ok
+test_busca_por_categoria (__main__.TestResiliencia.test_busca_por_categoria)
+Busca pelo nome da categoria deve funcionar. ... ok
+test_certificado_tech_inexistente_gera_generico (__main__.TestResiliencia.test_certificado_tech_inexistente_gera_generico)
+Tech não encontrada deve gerar certificado genérico. ... ok
+test_desafio_nivel_invalido_usa_intermediario (__main__.TestResiliencia.test_desafio_nivel_invalido_usa_intermediario) ... ok
+test_lista_tecnologias_ordem_por_id (__main__.TestResiliencia.test_lista_tecnologias_ordem_por_id) ... ok
+test_method_nao_suportado_404 (__main__.TestResiliencia.test_method_nao_suportado_404) ... ok
+test_paises_ilhas_sem_fronteiras (__main__.TestResiliencia.test_paises_ilhas_sem_fronteiras)
+Países ilhas devem ter fronteiras vazias (ex: Japão, Austrália). ... ok
+test_paises_tem_fronteiras (__main__.TestResiliencia.test_paises_tem_fronteiras)
+Países com fronteiras devem ter lista não vazia (ex: Brasil). ... ok
+test_trilha_busca_case_insensitive (__main__.TestResiliencia.test_trilha_busca_case_insensitive) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 0.049s
+
+OK
+
+=================================================================
+  GEO Explorer — Relatório de Integração
+=================================================================
+  ✅ Smoke Tests MCP                     15 testes
+  ✅ Fluxo Completo — QGIS               10 testes
+  ✅ Fluxo Completo — Python             5 testes
+  ✅ Resiliência / Edge Cases            10 testes
+=================================================================
+  Total    : 40
+  ✅ Passou : 40
+  ❌ Falhou : 0
+  Cobertura: 100.0%  |  Meta: 70%
+  ✅ META ATINGIDA!
+=================================================================
