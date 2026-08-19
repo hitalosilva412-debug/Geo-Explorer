@@ -226,9 +226,153 @@ curl -H "X-API-Key: geo-dev-key-001" http://localhost:8090/api/v1/paises
 
 ---
 
-## 🎯 Slash Commands
+## 🎯 Slash Commands — Como Usar os Comandos
 
-> Use diretamente no **chat do Bob**. Comandos locais em `.bob/commands/`.
+> Digite os comandos diretamente no **chat do Bob**. Eles ficam armazenados em `.bob/commands/` e são **exclusivos deste projeto**.
+
+---
+
+### 📍 `/geo <país>`
+
+Exibe um relatório geográfico completo do país informado.
+
+```
+/geo Brasil
+/geo Japão
+/geo França
+```
+
+**O que retorna:**
+- 🏛️ Capital, área, população, idioma e moeda
+- 🌐 Lista de países fronteiriços
+- 🏛️ Principais pontos turísticos com descrições
+- 💡 Curiosidades únicas sobre o país
+- 🗓️ Plano de visita sugerido de 5 dias
+- 📚 Livros e documentários recomendados
+
+> 💡 **Dica:** a busca é parcial e case-insensitive — `/geo brasil` e `/geo BRASIL` funcionam igualmente.
+
+---
+
+### 🗺️ `/mapa <região>`
+
+Gera uma representação visual ASCII da região com informações geográficas.
+
+```
+/mapa América do Sul
+/mapa Europa
+/mapa Brasil
+/mapa Oceania
+```
+
+**O que retorna:**
+- 🗺️ Mapa ASCII criativo da região com símbolos para oceano, montanhas, floresta e cidades
+- 🧭 Legenda dos símbolos utilizados
+- 📍 Tabela de pontos de referência com coordenadas aproximadas
+- 🌊 Principais rios, lagos e mares
+- ⛰️ Relevo — montanhas, planaltos e planícies
+- 🌤️ Tipos climáticos da região
+
+---
+
+### 📚 `/trilha_geo <tecnologia>`
+
+Gera um plano de estudo completo para a tecnologia geoespacial escolhida.
+
+```
+/trilha_geo QGIS
+/trilha_geo Python
+/trilha_geo GPS
+/trilha_geo Machine Learning
+/trilha_geo Drones
+```
+
+**O que retorna:**
+- 📊 Nível, módulos, XP total e carga horária
+- 🏅 Badges disponíveis e pré-requisitos
+- 🗓️ **Cronograma semanal** com todos os módulos distribuídos
+- 🎯 Objetivos divididos em 3 fases: Fundamentos → Desenvolvimento → Certificação
+- 📺 Lives recomendadas da trilha
+- 💡 Dicas de estudo
+
+**Tecnologias disponíveis (exemplos):**
+
+| Tecnologia | Nível | Módulos |
+|-----------|-------|---------|
+| GeoMapping com Python | Iniciante | 6 |
+| QGIS | Intermediário | 9 |
+| Google Earth Engine | Avançado | 11 |
+| PostGIS | Intermediário | 10 |
+| Machine Learning Geoespacial | Avançado | 12 |
+| Drones e Fotogrametria | Intermediário | 9 |
+| GPS Avançado | Avançado | 10 |
+
+> 💡 **Dica:** use busca parcial — `/trilha_geo geo` ou `/trilha_geo cartografia` também funcionam.
+
+---
+
+### 💻 `/desafio_geo <tecnologia> <nivel>`
+
+Gera um desafio técnico geoespacial aleatório personalizado.
+
+```
+/desafio_geo QGIS Iniciante
+/desafio_geo Python Intermediário
+/desafio_geo GPS Avançado
+/desafio_geo Machine Learning Avançado
+```
+
+**Níveis disponíveis:**
+
+| Nível | Tipo de desafio | Tempo | XP |
+|-------|----------------|-------|----|
+| `Iniciante` | Operações básicas, primeiros mapas | ~15min | 200 XP |
+| `Intermediário` | Análise espacial, scripts, APIs | ~45min | 500 XP |
+| `Avançado` | Algoritmos complexos, ML, automação | ~90min | 1000 XP |
+
+**O que retorna:**
+- 📋 Cenário narrativo realista (ex: "Você é um analista GIS contratado pela prefeitura...")
+- 🗺️ Enunciado técnico detalhado
+- 🧪 3 casos de teste: básico, real e edge case
+- 💡 3 dicas progressivas sem entregar a solução
+- 📊 Critérios de avaliação com pesos
+- ✅ Solução comentada passo a passo
+
+> 💡 **Dica:** se não informar o nível, o padrão é **Intermediário**.
+
+---
+
+### 🏆 `/certificado_geo <nome> <tecnologia>`
+
+Gera um certificado fictício em Markdown para o usuário que concluiu uma trilha.
+
+```
+/certificado_geo Hitalo QGIS
+/certificado_geo "Maria Silva" "GeoMapping com Python"
+/certificado_geo João "Machine Learning Geoespacial"
+```
+
+**O que retorna:**
+- 🏆 Certificado completo com logo ASCII do GEO Explorer
+- 📊 Tabela com detalhes: nível, módulos, XP, carga horária, badges e data
+- 🏅 Lista de badges conquistadas
+- 📺 Lives assistidas na trilha
+- 🆔 **ID único** no formato `GEO-2026-XXXXXXXX`
+- 🔒 Link de verificação fictício
+- 💾 **Arquivo salvo automaticamente** em `docs/certificados-emitidos/`
+
+---
+
+### 🔄 Fluxo Recomendado de Uso
+
+```
+1. /trilha_geo QGIS          → entenda o plano completo
+2. /desafio_geo QGIS Iniciante   → pratique os fundamentos
+3. /desafio_geo QGIS Intermediário → avance nos conceitos
+4. /certificado_geo SeuNome QGIS → celebre a conquista!
+```
+
+---
 
 | Comando | Exemplo | Resultado |
 |---------|---------|-----------|
