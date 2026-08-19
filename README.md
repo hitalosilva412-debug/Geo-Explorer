@@ -1,47 +1,240 @@
 # 🌍 GEO Explorer
 
-> Plataforma educacional de exploração geográfica — dados, mapas, desafios e certificados.
+> **Plataforma educacional de exploração geográfica** — dados, trilhas de estudo, desafios técnicos e certificados fictícios com API REST integrada.
+
+[![Testes](https://img.shields.io/badge/testes-83%2F83-brightgreen)](geo_explorer/CRC/)
+[![Cobertura](https://img.shields.io/badge/cobertura-100%25-brightgreen)](geo_explorer/CRC/)
+[![Versão](https://img.shields.io/badge/versão-1.0.0-blue)](CHANGELOG.md)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://python.org)
+[![Licença](https://img.shields.io/badge/licença-MIT-green)](LICENSE)
+
+---
+
+## 📋 Índice
+
+- [Visão Geral](#-visão-geral)
+- [Início Rápido](#-início-rápido)
+- [Slash Commands](#-slash-commands)
+- [API REST — MCP Service](#-api-rest--mcp-service)
+- [Estrutura do Projeto](#-estrutura-do-projeto)
+- [Dados](#-dados)
+- [Testes](#-testes)
+- [Documentação Completa](#-documentação-completa)
+
+---
+
+## 🎯 Visão Geral
+
+O **GEO Explorer** combina:
+
+```
+📚 Educação Geográfica   →  15 países + 20 tecnologias geoespaciais
+🎯 Slash Commands        →  /trilha_geo /desafio_geo /certificado_geo /geo /mapa
+📡 API REST              →  8 endpoints com auth APIKey / SSO JWT
+🧪 Testes Automatizados  →  83 testes · 100% cobertura
+📜 Certificados          →  Gerados e salvos em Markdown
+```
 
 ---
 
 ## ⚡ Início Rápido
 
 ```bash
-git clone https://github.com/hitalosilva412-debug/geo_explorer.git
-cd geo_explorer
-python geo_explorer/MCP/server.py
+# 1. Clone o repositório
+git clone https://github.com/hitalosilva412-debug/Geo-Explorer.git
+cd Geo-Explorer
+
+# 2. Inicie o MCP Service
+cd geo_explorer/MCP
+python server.py
+
+# 3. Teste no navegador ou curl
+curl http://localhost:8090/
+curl -H "X-API-Key: geo-dev-key-001" http://localhost:8090/api/v1/paises
 ```
 
 ---
 
 ## 🎯 Slash Commands
 
-| Comando | Exemplo | O que faz |
+> Use diretamente no **chat do Bob**. Comandos locais em `.bob/commands/`.
+
+| Comando | Exemplo | Resultado |
 |---------|---------|-----------|
-| `/geo` | `/geo Brasil` | Dados geográficos completos |
-| `/mapa` | `/mapa América do Sul` | Mapa ASCII da região |
-| `/desafio_geo` | `/desafio_geo Capitais Intermediário` | Desafio de geografia |
-| `/certificado_geo` | `/certificado_geo Hitalo "Capitais do Mundo"` | Certificado fictício |
+| `/geo` | `/geo Brasil` | Relatório geográfico completo + plano de visita |
+| `/mapa` | `/mapa América do Sul` | Mapa ASCII com legenda e pontos de referência |
+| `/trilha_geo` | `/trilha_geo QGIS` | Plano de estudo com cronograma semanal |
+| `/desafio_geo` | `/desafio_geo Python Avançado` | Desafio técnico com casos de teste e solução |
+| `/certificado_geo` | `/certificado_geo Hitalo QGIS` | Certificado fictício em Markdown |
 
 ---
 
-## 📁 Estrutura
+## 📡 API REST — MCP Service
 
+**Base URL:** `http://localhost:8090`
+
+### Endpoints
+
+| Método | Rota | Auth | Descrição |
+|--------|------|------|-----------|
+| `GET` | `/` | ❌ | Health check |
+| `GET` | `/api/v1/status` | ❌ | Status e versão |
+| `GET` | `/api/v1/docs` | ❌ | Documentação JSON |
+| `POST` | `/api/v1/auth/token` | ❌ | Gerar token SSO |
+| `GET` | `/api/v1/paises` | ✅ | Listar 15 países |
+| `GET` | `/api/v1/tecnologias` | ✅ | Listar 20 tecnologias |
+| `GET` | `/api/v1/geo?pais=X` | ✅ | Dados de um país |
+| `GET` | `/api/v1/trilha_geo?tech=X` | ✅ | Plano de estudo |
+| `GET` | `/api/v1/desafio_geo?tech=X&nivel=Y` | ✅ | Desafio de código |
+| `POST` | `/api/v1/certificado_geo` | ✅ | Gerar certificado |
+
+### Autenticação
+
+```bash
+# API Key (padrão)
+curl -H "X-API-Key: geo-dev-key-001" http://localhost:8090/api/v1/paises
+
+# SSO — gerar token
+curl -X POST http://localhost:8090/api/v1/auth/token \
+  -H "Content-Type: application/json" \
+  -d '{"usuario": "hitalo"}'
+
+# SSO — usar token
+curl -H "Authorization: Bearer <token>" http://localhost:8090/api/v1/paises
 ```
-geo_explorer/
-├── commands/      → Slash commands do Bob
-├── DATA/          → dados geográficos JSON
-├── CRC/           → testes unitários
-├── docs/          → documentação e certificados
-└── MCP/           → API REST
+
+### Exemplos
+
+```bash
+# Plano de estudo — QGIS
+curl -H "X-API-Key: geo-dev-key-001" \
+  "http://localhost:8090/api/v1/trilha_geo?tech=QGIS"
+
+# Desafio Python Avançado
+curl -H "X-API-Key: geo-dev-key-001" \
+  "http://localhost:8090/api/v1/desafio_geo?tech=Python&nivel=Avan%C3%A7ado"
+
+# Gerar certificado
+curl -X POST http://localhost:8090/api/v1/certificado_geo \
+  -H "X-API-Key: geo-dev-key-001" \
+  -H "Content-Type: application/json" \
+  -d '{"nome": "Hitalo Silva", "tecnologia": "QGIS"}'
 ```
 
 ---
 
-## 📖 Documentação
+## 📁 Estrutura do Projeto
+
+```
+Geo-Explorer/
+│
+├── README.md                         → Este arquivo
+├── CHANGELOG.md                      → Histórico de versões
+├── CONTRIBUTING.md                   → Guia de contribuição
+│
+└── geo_explorer/
+    │
+    ├── commands/                     → Slash commands do Bob
+    │   ├── geo.md                    → /geo <país>
+    │   ├── mapa.md                   → /mapa <região>
+    │   ├── trilha_geo.md             → /trilha_geo <tecnologia>
+    │   ├── desafio_geo.md            → /desafio_geo <tech> <nivel>
+    │   └── certificado_geo.md        → /certificado_geo <nome> <tech>
+    │
+    ├── DATA/                         → Dados geográficos e educacionais
+    │   ├── paises.geo_json           → 15 países com dados completos
+    │   └── tecnologias.geo_json      → 20 tecnologias com 198 módulos
+    │
+    ├── CRC/                          → Controle de Qualidade
+    │   ├── test_geo.py               → 43 testes unitários
+    │   ├── test_integration.py       → 40 testes de integração
+    │   ├── resultado_testes_geo.txt  → Log testes unitários
+    │   └── resultado_integracao.txt  → Log testes integração
+    │
+    ├── docs/                         → Documentação e certificados
+    │   ├── DOCUMENTACAO.md           → Documentação técnica completa
+    │   └── certificados-emitidos/    → Certificados gerados
+    │
+    ├── MCP/                          → API REST (MCP Service)
+    │   ├── server.py                 → Servidor HTTP (porta 8090)
+    │   ├── handlers.py               → Lógica de negócio
+    │   ├── config.py                 → Configurações
+    │   └── README.md                 → Docs do MCP Service
+    │
+    ├── assets/                       → Recursos estáticos
+    ├── config/                       → Configurações por ambiente
+    ├── scripts/                      → Scripts utilitários
+    ├── logs/                         → Logs da aplicação
+    └── backup/                       → Backups de dados
+```
+
+---
+
+## 📊 Dados
+
+### paises.geo_json — 15 países
+
+| Campo | Tipo | Descrição |
+|-------|------|-----------|
+| `nome` | string | Nome do país |
+| `capital` | string | Capital |
+| `continente` | string | Continente |
+| `area_km2` | int | Área em km² |
+| `populacao` | int | População |
+| `fronteiras` | array | Países fronteiriços |
+| `pontos_turisticos` | array | Atrações principais |
+| `curiosidades` | array | Fatos interessantes |
+| `nivel` | string | Iniciante / Intermediário / Avançado |
+| `xp` | int | XP ao completar |
+
+### tecnologias.geo_json — 20 tecnologias / 198 módulos
+
+| Campo | Tipo | Descrição |
+|-------|------|-----------|
+| `nome` | string | Nome da tecnologia |
+| `categoria` | string | Área de conhecimento |
+| `nivel` | string | Dificuldade |
+| `numero_de_modulos` | int | Quantidade de módulos |
+| `xp_total` | int | XP total da trilha |
+| `carga_horaria_total` | string | Carga em horas |
+| `modulos` | array | Lista de módulos com título, carga, xp, tipo |
+| `badges` | array | Badges disponíveis |
+| `lives` | array | Lives recomendadas |
+| `pre_requisitos` | array | Pré-requisitos |
+
+---
+
+## 🧪 Testes
+
+```bash
+# Testes unitários (43 testes)
+cd geo_explorer/CRC
+python test_geo.py
+
+# Testes de integração (40 testes)
+python test_integration.py
+```
+
+**Resultado atual:**
+```
+Unitários  : 43/43  ✅  100%
+Integração : 40/40  ✅  100%
+TOTAL      : 83/83  ✅  100%
+```
+
+---
+
+## 📖 Documentação Completa
 
 👉 [`geo_explorer/docs/DOCUMENTACAO.md`](geo_explorer/docs/DOCUMENTACAO.md)
 
 ---
 
-> 🌍 GEO Explorer v1.0.0 — Projeto educacional fictício
+## 🤝 Contribuição
+
+Veja o guia em [`CONTRIBUTING.md`](CONTRIBUTING.md)
+
+---
+
+> 🌍 **GEO Explorer v1.0.0** — _Explore o Mundo através dos Dados_
+> Projeto fictício educacional | [Hitalo Silva](https://github.com/hitalosilva412-debug)
