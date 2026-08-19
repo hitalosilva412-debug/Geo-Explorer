@@ -2,6 +2,41 @@
 
 > **Plataforma educacional de exploração geográfica** — dados, trilhas de estudo, desafios técnicos e certificados fictícios com API REST integrada.
 
+---
+
+## 🧭 O que é o GEO Explorer?
+
+O **GEO Explorer** é uma plataforma educacional fictícia criada para ensinar e explorar o mundo da **geotecnologia**, da **geografia** e das **tecnologias de informação geográfica (GIS)** de forma prática e interativa.
+
+Ele foi desenvolvido como um projeto de aprendizado que simula um ecossistema educacional completo, inspirado em plataformas como a [DIO](https://www.dio.me/), mas com foco total em **dados geoespaciais e geografia**.
+
+### 🎯 O que você pode fazer com ele?
+
+- 🌍 **Explorar países** — acesse dados detalhados de 15 países: capital, área, população, fronteiras, pontos turísticos e curiosidades
+- 🗺️ **Visualizar mapas** — gere representações ASCII de regiões do mundo com legenda, relevo e hidrografia
+- 📚 **Estudar geotecnologias** — acesse planos de estudo com cronograma semanal para 20 tecnologias como QGIS, Python, Google Earth Engine, PostGIS, Drones e muito mais
+- 💻 **Resolver desafios** — receba desafios técnicos geoespaciais personalizados por tecnologia e nível (Iniciante, Intermediário ou Avançado)
+- 🏆 **Conquistar certificados** — gere certificados fictícios em Markdown com ID único, badges e link de verificação
+- 📡 **Integrar via API** — consuma todos os recursos através de uma API REST com autenticação por API Key ou SSO JWT
+
+### 🧱 Como ele é estruturado?
+
+O projeto é composto por **4 pilares principais:**
+
+| Pilar | Descrição |
+|-------|-----------|
+| 🎯 **Slash Commands** | Comandos `/geo`, `/mapa`, `/trilha_geo`, `/desafio_geo` e `/certificado_geo` usados diretamente no chat do Bob |
+| 📊 **Dados** | Dois arquivos JSON com 15 países e 20 tecnologias geoespaciais (198 módulos) |
+| 📡 **MCP Service** | Servidor HTTP local (porta 8090) com 10 endpoints REST protegidos por autenticação |
+| 🧪 **Testes** | 83 testes automatizados (43 unitários + 40 de integração) com 100% de cobertura |
+
+### 👥 Para quem é?
+
+- 🎓 **Estudantes** de geografia, geoprocessamento e geotecnologias
+- 👨‍💻 **Desenvolvedores** que querem aprender a construir APIs REST com Python puro
+- 🏫 **Educadores** que precisam de exemplos práticos de plataformas educacionais
+- 🔬 **Pesquisadores** que querem um template de projeto com dados geoespaciais fictícios
+
 [![Testes](https://img.shields.io/badge/testes-83%2F83-brightgreen)](geo_explorer/CRC/)
 [![Cobertura](https://img.shields.io/badge/cobertura-100%25-brightgreen)](geo_explorer/CRC/)
 [![Versão](https://img.shields.io/badge/versão-1.0.0-blue)](CHANGELOG.md)
