@@ -1,0 +1,22 @@
+# Dependencias
+node_modules/
+
+# Variaveis de ambiente
+.env
+.env.*
+*.env
+
+# Cache
+data_cache/
+__pycache__/
+*.pyc
+
+# Progresso
+progresso/
+
+# Certificados gerados
+docs/certificados-emitidos/
+
+# Temporarios
+*.tmp
+*.log

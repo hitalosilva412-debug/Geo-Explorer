@@ -1,0 +1,37 @@
+test_campos_obrigatorios (__main__.TestCarregarPaises.test_campos_obrigatorios) ... ok
+test_json_carrega (__main__.TestCarregarPaises.test_json_carrega) ... ok
+test_tem_15_paises (__main__.TestCarregarPaises.test_tem_15_paises) ... ok
+test_brasil_encontrado (__main__.TestHandleGeo.test_brasil_encontrado) ... ok
+test_busca_case_insensitive (__main__.TestHandleGeo.test_busca_case_insensitive) ... ok
+test_japao_encontrado (__main__.TestHandleGeo.test_japao_encontrado) ... ok
+test_nao_encontrado_retorna_sugestoes (__main__.TestHandleGeo.test_nao_encontrado_retorna_sugestoes) ... ok
+test_pais_nao_encontrado (__main__.TestHandleGeo.test_pais_nao_encontrado) ... ok
+test_sem_parametro (__main__.TestHandleGeo.test_sem_parametro) ... ok
+test_desafio_brasil_iniciante (__main__.TestHandleDesafioGeo.test_desafio_brasil_iniciante) ... ok
+test_desafio_tem_questoes (__main__.TestHandleDesafioGeo.test_desafio_tem_questoes) ... ok
+test_desafio_xp_positivo (__main__.TestHandleDesafioGeo.test_desafio_xp_positivo) ... ok
+test_sem_nivel_usa_intermediario (__main__.TestHandleDesafioGeo.test_sem_nivel_usa_intermediario) ... ok
+test_sem_tema_retorna_400 (__main__.TestHandleDesafioGeo.test_sem_tema_retorna_400) ... ok
+test_certificado_arquivo_criado (__main__.TestHandleCertificadoGeo.test_certificado_arquivo_criado) ... ok
+test_certificado_emitido (__main__.TestHandleCertificadoGeo.test_certificado_emitido) ... ok
+test_certificado_tem_id (__main__.TestHandleCertificadoGeo.test_certificado_tem_id) ... ok
+test_sem_nome_retorna_400 (__main__.TestHandleCertificadoGeo.test_sem_nome_retorna_400) ... ok
+test_sem_tema_retorna_400 (__main__.TestHandleCertificadoGeo.test_sem_tema_retorna_400) ... ok
+test_campos_resumo (__main__.TestHandleListaPaises.test_campos_resumo) ... ok
+test_lista_retorna_200 (__main__.TestHandleListaPaises.test_lista_retorna_200) ... ok
+test_lista_tem_15_paises (__main__.TestHandleListaPaises.test_lista_tem_15_paises) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.015s
+
+OK
+
+=======================================================
+  GEO Explorer — Resultado dos Testes
+=======================================================
+  Total    : 22
+  ✅ Passou : 22
+  ❌ Falhou : 0
+  Cobertura: 100.0%  |  Meta: 70%
+  ✅ META ATINGIDA!
+=======================================================
