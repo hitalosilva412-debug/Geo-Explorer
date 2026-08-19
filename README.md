@@ -741,6 +741,157 @@ Esta seção registra todas as evoluções e melhorias implementadas ao longo do
 
 ---
 
+## 🎓 O que foi Aprendido durante o Desafio
+
+Este projeto foi uma jornada de aprendizado completa — do zero à entrega de uma plataforma educacional funcional com API REST, testes automatizados e documentação profissional.
+
+---
+
+### 🐍 1. Python Puro para APIs REST
+
+> **Antes:** dependência de frameworks como Flask ou FastAPI.
+> **Depois:** capacidade de construir um servidor HTTP completo usando **apenas a biblioteca padrão do Python**.
+
+```python
+# Aprendemos a usar http.server.BaseHTTPRequestHandler
+# para criar servidores HTTP sem nenhuma dependência externa
+from http.server import BaseHTTPRequestHandler, HTTPServer
+```
+
+✅ **O que foi aprendido:**
+- Como o protocolo HTTP funciona internamente (headers, status codes, body)
+- Roteamento manual com `urlparse` e `parse_qs`
+- Leitura e escrita de `Content-Length` e `Content-Type`
+- Tratamento de métodos `GET`, `POST`, `OPTIONS` (CORS preflight)
+
+---
+
+### 🔐 2. Autenticação: API Key e JWT sem Bibliotecas Externas
+
+> Um dos maiores aprendizados foi implementar **JWT (JSON Web Token)** do zero.
+
+```python
+# JWT feito com hmac + hashlib + base64 — zero libs externas
+import hmac, hashlib, base64
+signature = hmac.new(secret.encode(), msg, hashlib.sha256).digest()
+```
+
+✅ **O que foi aprendido:**
+- Estrutura de um JWT: `header.payload.signature`
+- Como funciona HMAC-SHA256 para assinar tokens
+- Diferença entre autenticação `stateless` (JWT) e `stateful` (sessões)
+- Boas práticas: nunca expor secrets, usar `hmac.compare_digest` contra timing attacks
+
+---
+
+### 🗂️ 3. Modelagem de Dados com JSON
+
+> Projetamos schemas JSON ricos e reutilizáveis para **15 países** e **20 tecnologias**.
+
+✅ **O que foi aprendido:**
+- Como estruturar dados hierárquicos em JSON (objetos aninhados, arrays de objetos)
+- Importância de campos padronizados para facilitar busca e filtragem
+- Uso de `encoding="utf-8-sig"` para lidar com BOM em arquivos Windows
+- Diferença entre dados **normalizados** (sem repetição) e dados **desnormalizados** (para leitura rápida)
+
+---
+
+### 🧪 4. Testes Automatizados com `unittest`
+
+> Saímos de **zero testes** para **83 testes** com **100% de cobertura**.
+
+```python
+class TestHandleTrilhaGeo(unittest.TestCase):
+    def test_cronograma_cobre_todos_modulos(self):
+        r = handle_trilha_geo("QGIS")
+        tech = _buscar_tecnologia("QGIS")
+        self.assertEqual(len(r["cronograma"]), tech["numero_de_modulos"])
+```
+
+✅ **O que foi aprendido:**
+- Diferença entre **testes unitários** (função isolada) e **testes de integração** (sistema completo)
+- Como usar `setUp` e `tearDown` para preparar dados de teste
+- Testes de **resiliência**: verificar que o sistema trata edge cases corretamente
+- Como gerar **relatórios de teste em arquivo `.txt`** para rastreabilidade
+- Por que meta de cobertura (70%) é um piso, não um teto
+
+---
+
+### 📁 5. Organização Profissional de Projetos
+
+✅ **O que foi aprendido:**
+- Separação de responsabilidades em pastas (`DATA/`, `MCP/`, `CRC/`, `docs/`, `commands/`)
+- Uso de `.gitkeep` para versionar pastas vazias
+- Importância do `.gitignore` para não commitar `__pycache__`, `.env` e logs
+- Como criar READMEs específicos por módulo para facilitar colaboração
+
+---
+
+### 🎯 6. Slash Commands como Interface de IA
+
+> Descobrimos como criar **comandos personalizados para o Bob** usando arquivos Markdown.
+
+```markdown
+# /trilha_geo — Plano de Estudo GEO Explorer
+O usuário quer estudar: **$ARGUMENTS**
+Leia o arquivo DATA/tecnologias.geo_json e gere um plano...
+```
+
+✅ **O que foi aprendido:**
+- Como usar `$ARGUMENTS` para capturar parâmetros do usuário
+- Diferença entre comandos **locais** (`.bob/commands/`) e **globais** (`~/.bob/commands/`)
+- Como estruturar prompts eficazes: contexto → dados → formato de saída esperado
+- Que bons slash commands são como boas funções: **uma responsabilidade, bem documentada**
+
+---
+
+### 📡 7. Design de APIs REST
+
+✅ **O que foi aprendido:**
+- Convenções REST: verbos HTTP corretos (`GET` para leitura, `POST` para criação)
+- Códigos de status semânticos: `200` OK, `201` Created, `400` Bad Request, `401` Unauthorized, `404` Not Found
+- Como padronizar respostas JSON com campo `status` em todos os retornos
+- Importância do endpoint `/docs` para auto-documentação
+- CORS: por que é necessário e como configurar `Access-Control-Allow-Origin`
+
+---
+
+### 📖 8. Documentação como Produto
+
+> Aprendemos que **documentação ruim é tão prejudicial quanto código ruim**.
+
+✅ **O que foi aprendido:**
+- Como escrever um `README.md` profissional com badges, exemplos prontos e início rápido
+- Estrutura de um bom `CHANGELOG.md` seguindo o padrão [Keep a Changelog](https://keepachangelog.com)
+- Como escrever um `CONTRIBUTING.md` que realmente ajuda novos colaboradores
+- Valor de documentar **o porquê** das decisões, não apenas o **o quê**
+
+---
+
+### 🔄 9. Git e Versionamento Semântico
+
+✅ **O que foi aprendido:**
+- [Conventional Commits](https://www.conventionalcommits.org/): `feat:`, `fix:`, `docs:`, `test:`, `data:`
+- Como cada commit deve ter **um propósito claro** e **mensagem descritiva**
+- Uso de `git config --global credential.helper store` para persistir credenciais
+- Diferença entre `git remote add` e `git push -u origin main`
+
+---
+
+### 💡 10. Principais Lições do Desafio
+
+| Lição | Aprendizado |
+|-------|-------------|
+| 🏗️ **Estrutura primeiro** | Organizar pastas antes de codificar poupa retrabalho |
+| 🧪 **Testar desde o início** | Testes escritos junto com o código são mais fáceis |
+| 📖 **Documentar enquanto desenvolve** | Documentação escrita depois fica incompleta |
+| 🔐 **Segurança por padrão** | Autenticação deve ser o padrão, não uma adição posterior |
+| ♻️ **Reutilização de código** | Uma função bem nomeada vale mais que dez comentários |
+| 🎯 **Foco no usuário** | Slash commands devem ser intuitivos, não técnicos |
+| 📦 **Zero dependências** | Quando possível, biblioteca padrão é a melhor dependência |
+
+---
+
 ## 🤝 Contribuição
 
 Veja o guia em [`CONTRIBUTING.md`](CONTRIBUTING.md)
