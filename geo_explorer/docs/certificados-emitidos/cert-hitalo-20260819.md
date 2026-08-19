@@ -1,18 +1,43 @@
-# 🌍 CERTIFICADO DE EXPLORAÇÃO GEOGRÁFICA
+# 🌍 CERTIFICADO DE CONCLUSÃO — GEO Explorer
+
+```
+ ██████╗ ███████╗ ██████╗
+██╔════╝ ██╔════╝██╔═══██╗
+██║  ███╗█████╗  ██║   ██║
+██║   ██║██╔══╝  ██║   ██║
+╚██████╔╝███████╗╚██████╔╝
+ ╚═════╝ ╚══════╝ ╚═════╝
+       GEO Explorer
+```
+
+---
 
 ## ✨ HITALO ✨
 
-Completou com distinção a exploração de:
+**concluiu com êxito a trilha:**
 
-## 🌐 Brasil
+## 🌐 TechInexistente999
 
 | Campo | Detalhes |
 |-------|----------|
-| 🌍 Tema | Brasil |
-| 📊 Nível | Iniciante |
-| ⭐ XP | 300 XP |
-| 📅 Data | 19/08/2026 |
-| 🆔 ID | GEO-2026-29248796 |
+| 📂 Categoria | Geotecnologia |
+| 📊 Nível | Intermediário |
+| 📦 Módulos | 0/0 ✅ |
+| ⭐ XP | 500 XP |
+| 🕐 Carga Horária | N/A |
+| 🏅 Badges | TechInexistente999 Explorer |
+| 📅 Conclusão | 19/08/2026 |
+| 🆔 ID | GEO-2026-80479889 |
 
-> 🔒 https://geoexplorer.app/certificate/GEO-2026-29248796
-_GEO Explorer v1.0.0 — Certificado Fictício_
+### 🏆 Badges
+🏅 **TechInexistente999 Explorer**  
+
+### 📺 Lives Assistidas
+
+
+---
+
+> 🔒 https://geoexplorer.app/certificate/GEO-2026-80479889
+> 🌍 GEO Explorer — _Explore o Mundo pelos Dados_
+
+_Certificado Fictício — GEO Explorer v1.0.0_

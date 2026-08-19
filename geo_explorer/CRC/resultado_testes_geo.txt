@@ -1,37 +1,58 @@
 test_campos_obrigatorios (__main__.TestCarregarPaises.test_campos_obrigatorios) ... ok
 test_json_carrega (__main__.TestCarregarPaises.test_json_carrega) ... ok
 test_tem_15_paises (__main__.TestCarregarPaises.test_tem_15_paises) ... ok
+test_cada_modulo_tem_campos (__main__.TestCarregarTecnologias.test_cada_modulo_tem_campos) ... ok
+test_campos_obrigatorios (__main__.TestCarregarTecnologias.test_campos_obrigatorios) ... ok
+test_json_carrega (__main__.TestCarregarTecnologias.test_json_carrega) ... ok
+test_tem_20_tecnologias (__main__.TestCarregarTecnologias.test_tem_20_tecnologias) ... ok
+test_tipos_validos (__main__.TestCarregarTecnologias.test_tipos_validos) ... ok
 test_brasil_encontrado (__main__.TestHandleGeo.test_brasil_encontrado) ... ok
 test_busca_case_insensitive (__main__.TestHandleGeo.test_busca_case_insensitive) ... ok
 test_japao_encontrado (__main__.TestHandleGeo.test_japao_encontrado) ... ok
-test_nao_encontrado_retorna_sugestoes (__main__.TestHandleGeo.test_nao_encontrado_retorna_sugestoes) ... ok
 test_pais_nao_encontrado (__main__.TestHandleGeo.test_pais_nao_encontrado) ... ok
-test_sem_parametro (__main__.TestHandleGeo.test_sem_parametro) ... ok
-test_desafio_brasil_iniciante (__main__.TestHandleDesafioGeo.test_desafio_brasil_iniciante) ... ok
-test_desafio_tem_questoes (__main__.TestHandleDesafioGeo.test_desafio_tem_questoes) ... ok
+test_sem_parametro_retorna_400 (__main__.TestHandleGeo.test_sem_parametro_retorna_400) ... ok
+test_sugestoes_em_nao_encontrado (__main__.TestHandleGeo.test_sugestoes_em_nao_encontrado) ... ok
+test_cronograma_tem_semanas (__main__.TestHandleTrilhaGeo.test_cronograma_tem_semanas) ... ok
+test_python_encontrado (__main__.TestHandleTrilhaGeo.test_python_encontrado) ... ok
+test_qgis_encontrado (__main__.TestHandleTrilhaGeo.test_qgis_encontrado) ... ok
+test_retorna_cronograma (__main__.TestHandleTrilhaGeo.test_retorna_cronograma) ... ok
+test_retorna_fases (__main__.TestHandleTrilhaGeo.test_retorna_fases) ... ok
+test_sem_parametro_retorna_400 (__main__.TestHandleTrilhaGeo.test_sem_parametro_retorna_400) ... ok
+test_tecnologia_nao_encontrada (__main__.TestHandleTrilhaGeo.test_tecnologia_nao_encontrada) ... ok
+test_total_semanas_positivo (__main__.TestHandleTrilhaGeo.test_total_semanas_positivo) ... ok
+test_desafio_qgis_iniciante (__main__.TestHandleDesafioGeo.test_desafio_qgis_iniciante) ... ok
+test_desafio_tem_criterios (__main__.TestHandleDesafioGeo.test_desafio_tem_criterios) ... ok
+test_desafio_tem_dicas (__main__.TestHandleDesafioGeo.test_desafio_tem_dicas) ... ok
+test_desafio_tem_enunciado (__main__.TestHandleDesafioGeo.test_desafio_tem_enunciado) ... ok
+test_desafio_tem_tempo (__main__.TestHandleDesafioGeo.test_desafio_tem_tempo) ... ok
 test_desafio_xp_positivo (__main__.TestHandleDesafioGeo.test_desafio_xp_positivo) ... ok
 test_sem_nivel_usa_intermediario (__main__.TestHandleDesafioGeo.test_sem_nivel_usa_intermediario) ... ok
-test_sem_tema_retorna_400 (__main__.TestHandleDesafioGeo.test_sem_tema_retorna_400) ... ok
+test_sem_parametro_retorna_400 (__main__.TestHandleDesafioGeo.test_sem_parametro_retorna_400) ... ok
 test_certificado_arquivo_criado (__main__.TestHandleCertificadoGeo.test_certificado_arquivo_criado) ... ok
 test_certificado_emitido (__main__.TestHandleCertificadoGeo.test_certificado_emitido) ... ok
+test_certificado_tem_badges (__main__.TestHandleCertificadoGeo.test_certificado_tem_badges) ... ok
 test_certificado_tem_id (__main__.TestHandleCertificadoGeo.test_certificado_tem_id) ... ok
+test_certificado_tem_verificacao (__main__.TestHandleCertificadoGeo.test_certificado_tem_verificacao) ... ok
 test_sem_nome_retorna_400 (__main__.TestHandleCertificadoGeo.test_sem_nome_retorna_400) ... ok
-test_sem_tema_retorna_400 (__main__.TestHandleCertificadoGeo.test_sem_tema_retorna_400) ... ok
-test_campos_resumo (__main__.TestHandleListaPaises.test_campos_resumo) ... ok
-test_lista_retorna_200 (__main__.TestHandleListaPaises.test_lista_retorna_200) ... ok
-test_lista_tem_15_paises (__main__.TestHandleListaPaises.test_lista_tem_15_paises) ... ok
+test_sem_tecnologia_retorna_400 (__main__.TestHandleCertificadoGeo.test_sem_tecnologia_retorna_400) ... ok
+test_tecnologia_inexistente_gera_cert (__main__.TestHandleCertificadoGeo.test_tecnologia_inexistente_gera_cert) ... ok
+test_campos_resumo_tecnologia (__main__.TestHandleListas.test_campos_resumo_tecnologia) ... ok
+test_lista_paises_200 (__main__.TestHandleListas.test_lista_paises_200) ... ok
+test_lista_paises_tem_15 (__main__.TestHandleListas.test_lista_paises_tem_15) ... ok
+test_lista_tecnologias_200 (__main__.TestHandleListas.test_lista_tecnologias_200) ... ok
+test_lista_tecnologias_tem_20 (__main__.TestHandleListas.test_lista_tecnologias_tem_20) ... ok
 
 ----------------------------------------------------------------------
-Ran 22 tests in 0.015s
+Ran 43 tests in 0.040s
 
 OK
 
-=======================================================
+============================================================
   GEO Explorer — Resultado dos Testes
-=======================================================
-  Total    : 22
-  ✅ Passou : 22
+============================================================
+  Total    : 43
+  ✅ Passou : 43
   ❌ Falhou : 0
   Cobertura: 100.0%  |  Meta: 70%
   ✅ META ATINGIDA!
-=======================================================
+============================================================

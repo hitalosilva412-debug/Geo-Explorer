@@ -11,7 +11,8 @@ from datetime import datetime
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import config
-from handlers import handle_geo, handle_desafio_geo, handle_certificado_geo, handle_lista_paises
+from handlers import (handle_geo, handle_trilha_geo, handle_desafio_geo,
+                      handle_certificado_geo, handle_lista_paises, handle_lista_tecnologias)
 
 
 def _resp(data, status=200):
@@ -38,8 +39,10 @@ def rotear(method, path, headers, body):
         return _resp({"endpoints":[
             {"method":"GET","path":"/","auth":False},
             {"method":"GET","path":"/api/v1/paises","auth":True},
+            {"method":"GET","path":"/api/v1/tecnologias","auth":True},
             {"method":"GET","path":"/api/v1/geo?pais=X","auth":True},
-            {"method":"GET","path":"/api/v1/desafio_geo?tema=X&nivel=Y","auth":True},
+            {"method":"GET","path":"/api/v1/trilha_geo?tech=X","auth":True},
+            {"method":"GET","path":"/api/v1/desafio_geo?tech=X&nivel=Y","auth":True},
             {"method":"POST","path":"/api/v1/certificado_geo","auth":True},
             {"method":"POST","path":"/api/v1/auth/token","auth":False},
         ],"chaves_teste":["geo-dev-key-001","geo-dev-key-002"]})
@@ -60,13 +63,17 @@ def rotear(method, path, headers, body):
 
     if rota == "/api/v1/paises" and method == "GET":
         r = handle_lista_paises(); return _resp(r, r["status"])
+    if rota == "/api/v1/tecnologias" and method == "GET":
+        r = handle_lista_tecnologias(); return _resp(r, r["status"])
     if rota == "/api/v1/geo" and method == "GET":
         r = handle_geo(q("pais") or ""); return _resp(r, r["status"])
+    if rota == "/api/v1/trilha_geo" and method == "GET":
+        r = handle_trilha_geo(q("tech") or ""); return _resp(r, r["status"])
     if rota == "/api/v1/desafio_geo" and method == "GET":
-        r = handle_desafio_geo(q("tema") or "", q("nivel") or "Intermediário"); return _resp(r, r["status"])
+        r = handle_desafio_geo(q("tech") or "", q("nivel") or "Intermediário"); return _resp(r, r["status"])
     if rota == "/api/v1/certificado_geo" and method == "POST":
         data = json.loads(body or "{}")
-        r = handle_certificado_geo(data.get("nome",""), data.get("tema","")); return _resp(r, r["status"])
+        r = handle_certificado_geo(data.get("nome",""), data.get("tecnologia","")); return _resp(r, r["status"])
 
     return _resp({"erro":f"Rota '{rota}' não encontrada","docs":"/api/v1/docs"},404)
 
@@ -105,8 +112,10 @@ def main():
 ║     🌍 GEO Explorer MCP Service v1.0.0       ║
 ╠══════════════════════════════════════════════╣
 ║  GET  /api/v1/paises                         ║
+║  GET  /api/v1/tecnologias                    ║
 ║  GET  /api/v1/geo?pais=X                     ║
-║  GET  /api/v1/desafio_geo?tema=X&nivel=Y     ║
+║  GET  /api/v1/trilha_geo?tech=X              ║
+║  GET  /api/v1/desafio_geo?tech=X&nivel=Y     ║
 ║  POST /api/v1/certificado_geo                ║
 ║  POST /api/v1/auth/token                     ║
 ╚══════════════════════════════════════════════╝

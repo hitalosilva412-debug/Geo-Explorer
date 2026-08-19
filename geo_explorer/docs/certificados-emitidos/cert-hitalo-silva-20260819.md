@@ -1,18 +1,43 @@
-# 🌍 CERTIFICADO DE EXPLORAÇÃO GEOGRÁFICA
+# 🌍 CERTIFICADO DE CONCLUSÃO — GEO Explorer
+
+```
+ ██████╗ ███████╗ ██████╗
+██╔════╝ ██╔════╝██╔═══██╗
+██║  ███╗█████╗  ██║   ██║
+██║   ██║██╔══╝  ██║   ██║
+╚██████╔╝███████╗╚██████╔╝
+ ╚═════╝ ╚══════╝ ╚═════╝
+       GEO Explorer
+```
+
+---
 
 ## ✨ HITALO SILVA ✨
 
-Completou com distinção a exploração de:
+**concluiu com êxito a trilha:**
 
-## 🌐 Brasil
+## 🌐 Análise de Dados Geográficos com QGIS
 
 | Campo | Detalhes |
 |-------|----------|
-| 🌍 Tema | Brasil |
-| 📊 Nível | Iniciante |
-| ⭐ XP | 300 XP |
-| 📅 Data | 19/08/2026 |
-| 🆔 ID | GEO-2026-50822396 |
+| 📂 Categoria | SIG / GIS |
+| 📊 Nível | Intermediário |
+| 📦 Módulos | 9/9 ✅ |
+| ⭐ XP | 6800 XP |
+| 🕐 Carga Horária | 42h |
+| 🏅 Badges | GIS Analyst • QGIS Master • Spatial Thinker |
+| 📅 Conclusão | 19/08/2026 |
+| 🆔 ID | GEO-2026-88009309 |
 
-> 🔒 https://geoexplorer.app/certificate/GEO-2026-50822396
-_GEO Explorer v1.0.0 — Certificado Fictício_
+### 🏆 Badges
+🏅 **GIS Analyst**  🏅 **QGIS Master**  🏅 **Spatial Thinker**  
+
+### 📺 Lives Assistidas
+  ✅ Live: QGIS do Zero\n  ✅ Live: PostGIS Espacial\n  ✅ Live: Mapas Temáticos\n
+
+---
+
+> 🔒 https://geoexplorer.app/certificate/GEO-2026-88009309
+> 🌍 GEO Explorer — _Explore o Mundo pelos Dados_
+
+_Certificado Fictício — GEO Explorer v1.0.0_
