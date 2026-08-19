@@ -47,6 +47,8 @@ O projeto é composto por **4 pilares principais:**
 
 ## 📋 Índice
 
+- [O que é o GEO Explorer](#-o-que-é-o-geo-explorer)
+- [Como Executar o Projeto](#-como-executar-o-projeto)
 - [Visão Geral](#-visão-geral)
 - [Início Rápido](#-início-rápido)
 - [Slash Commands](#-slash-commands)
@@ -55,6 +57,140 @@ O projeto é composto por **4 pilares principais:**
 - [Dados](#-dados)
 - [Testes](#-testes)
 - [Documentação Completa](#-documentação-completa)
+
+---
+
+## 🚀 Como Executar o Projeto
+
+### ✅ Pré-requisitos
+
+Antes de começar, certifique-se de ter instalado:
+
+| Requisito | Versão mínima | Download |
+|-----------|--------------|---------|
+| **Python** | 3.10+ | [python.org](https://www.python.org/downloads/) |
+| **Git** | 2.30+ | [git-scm.com](https://git-scm.com/) |
+
+> Nenhuma dependência externa é necessária — o servidor usa apenas a **biblioteca padrão do Python**.
+
+---
+
+### 1️⃣ Clone o Repositório
+
+```bash
+git clone https://github.com/hitalosilva412-debug/Geo-Explorer.git
+cd Geo-Explorer
+```
+
+---
+
+### 2️⃣ Inicie o MCP Service (API REST)
+
+```bash
+cd geo_explorer/MCP
+
+# Modo padrão — porta 8090, autenticação por API Key
+python server.py
+```
+
+Você verá o banner de confirmação:
+
+```
+╔══════════════════════════════════════════════╗
+║     🌍 GEO Explorer MCP Service v1.0.0       ║
+╚══════════════════════════════════════════════╝
+  🌐 http://localhost:8090  |  Auth: apikey
+```
+
+#### Opções de inicialização
+
+```bash
+# Porta customizada
+python server.py --port 9090
+
+# Sem autenticação (desenvolvimento local)
+python server.py --auth none
+
+# Modo SSO com JWT
+python server.py --auth sso
+```
+
+---
+
+### 3️⃣ Teste se está funcionando
+
+```bash
+# Health check — sem autenticação
+curl http://localhost:8090/
+
+# Listar países — com API Key
+curl -H "X-API-Key: geo-dev-key-001" \
+  http://localhost:8090/api/v1/paises
+
+# Plano de estudo QGIS
+curl -H "X-API-Key: geo-dev-key-001" \
+  "http://localhost:8090/api/v1/trilha_geo?tech=QGIS"
+
+# Gerar certificado
+curl -X POST http://localhost:8090/api/v1/certificado_geo \
+  -H "X-API-Key: geo-dev-key-001" \
+  -H "Content-Type: application/json" \
+  -d '{"nome": "Seu Nome", "tecnologia": "QGIS"}'
+```
+
+---
+
+### 4️⃣ Use os Slash Commands no Bob
+
+Com o projeto aberto no Bob, use diretamente no chat:
+
+```
+/geo Brasil
+/mapa América do Sul
+/trilha_geo QGIS
+/desafio_geo Python Avançado
+/certificado_geo SeuNome QGIS
+```
+
+> ⚠️ Os slash commands ficam em `.bob/commands/` e são **locais ao workspace**.
+
+---
+
+### 5️⃣ Execute os Testes Automatizados
+
+```bash
+cd geo_explorer/CRC
+
+# Testes unitários (43 testes)
+python test_geo.py
+
+# Testes de integração (40 testes)
+python test_integration.py
+```
+
+Resultado esperado:
+```
+✅ Testes: 43/43 | Cobertura: 100.0%
+✅ Testes: 40/40 | Cobertura: 100.0%
+```
+
+---
+
+### ⚙️ Variáveis de Ambiente (opcional)
+
+Copie o arquivo de exemplo e ajuste conforme necessário:
+
+```bash
+cp geo_explorer/MCP/.env.example geo_explorer/MCP/.env
+```
+
+| Variável | Padrão | Descrição |
+|----------|--------|-----------|
+| `GEO_HOST` | `0.0.0.0` | Host do servidor |
+| `GEO_PORT` | `8090` | Porta do servidor |
+| `GEO_AUTH_MODE` | `apikey` | Modo de autenticação |
+| `GEO_API_KEYS` | `geo-dev-key-001,...` | Chaves de API válidas |
+| `GEO_SSO_SECRET` | `geo-sso-secret-2026` | Secret para JWT |
 
 ---
 
